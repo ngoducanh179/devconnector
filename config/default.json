@@ -1,4 +1,6 @@
 {
-    "mongoURI": "mongodb+srv://tomanhht123:tomanhht123@cluster0-dxtfu.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://ngoducanh179:passwordhide@cluster0-jicmj.mongodb.net/test?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken"
+
+
 }
