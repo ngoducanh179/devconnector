@@ -14,8 +14,7 @@ const connectDB = async () => {
     });
     console.log('MongoDB Connected...');
   } catch (e) {
-    console.error(e.message);
-    //Exit procecc
+    console.error('can not connect the database');
     console.exit(1);
   }
 };
