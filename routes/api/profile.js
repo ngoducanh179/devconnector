@@ -6,7 +6,7 @@ const config = require('config');
 const User = require('./../../models/User');
 const { check, validationResult } = require('express-validator');
 const auth = require('./../../middleware/auth');
-
+const Post = require('./../../models/Post');
 router.get('/me', auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({
@@ -18,6 +18,7 @@ router.get('/me', auth, async (req, res) => {
         msg: 'There is no profile for this user'
       });
     }
+    return res.status(200).json(profile);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('server error');
@@ -197,6 +198,7 @@ router.delete('/', auth, async (req, res) => {
     await User.findOneAndRemove({
       _id: req.user.id
     });
+    await Post.deleteMany({ user: req.user.id });
 
     res.json({
       msg: 'User deleted'

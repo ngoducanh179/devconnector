@@ -1,5 +1,5 @@
+import { SET_ALERT, REMOVE_ALERT } from './../actions/Types';
 const initialState = [];
-import { SET_ALERT, REMOVE_ALERT } from '../actions/Types';
 export default function(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
